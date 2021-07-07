@@ -20,9 +20,12 @@ const ButtonContainer = styled.button`
 	border: none;
 	background-color: transparent;
 	cursor: pointer;
-
 	text-align: left;
 
+	a {
+		display: block;
+		width: 100%;
+	}
 	:focus,
 	:hover {
 		background-color: var(--side-menu-background-secondary);
