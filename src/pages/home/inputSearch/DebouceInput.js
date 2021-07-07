@@ -1,18 +1,30 @@
 import styled from "styled-components";
+import { useState } from "react";
 import { DebounceInput as DbInput } from "react-debounce-input";
 import { BiSearchAlt as SearchIcon } from "react-icons/bi";
+import Suggestions from "./Suggestions";
 
-export default function DebounceInput({ value, setValue }) {
+export default function DebounceInput() {
+	const [searchName, setSearchName] = useState(null);
+	const [showingSuggestions, setShowingSuggestions] = useState(false);
+
 	return (
 		<DebounceInputContainer>
 			<DbInput
 				placeholder="Quem você deseja encontrar?"
 				minLength={3}
 				debounceTimeout={500}
-				onChange={(e) => setValue(e.target.value)}
-                value={value}
+				onChange={(e) => setSearchName(e.target.value)}
+				value={searchName}
+				onBlur={() => {
+					setTimeout(() => setShowingSuggestions(false), 150);
+				}}
+				onFocus={() => {
+					setShowingSuggestions(true);
+				}}
 			/>
 			<SearchIcon className="icon" />
+			{showingSuggestions && <Suggestions searchName={searchName} />}
 		</DebounceInputContainer>
 	);
 }

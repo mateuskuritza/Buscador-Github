@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import styled from "styled-components";
 import useGetUserInfos from "../../Requests/useGetUserInfos";
 
@@ -7,8 +7,11 @@ import dayjs from "dayjs";
 
 import { MdGpsFixed as GpsIcon, MdBusinessCenter as BusinessIcon, MdWebAsset as WebIcon } from "react-icons/md";
 import { FiTwitter as TwitterIcon } from "react-icons/fi";
+import UserNameContext from "../../contexts/UserNameContext";
 
-export default function UserInfos({ userName }) {
+export default function UserInfos() {
+	const { userName } = useContext(UserNameContext);
+	console.log(userName);
 	const { loading, error, data, fetchData } = useGetUserInfos(userName);
 
 	useEffect(() => {
@@ -23,7 +26,7 @@ export default function UserInfos({ userName }) {
 		return value || <span>Não informado</span>;
 	}
 
-    if(!userName) return <h3>Pesquise por um usuário!</h3>;
+	if (!userName) return <h3>Pesquise por um usuário!</h3>;
 
 	if (loading) {
 		return <Loader type="Puff" color="#000000" height={300} width={300} timeout={3000} />;
@@ -57,10 +60,11 @@ export default function UserInfos({ userName }) {
 
 			<GitHubInfos>
 				<p>
-					Conta criada em {formatDate(created_at)} sendo a ultima alteração no dia {formatDate(updated_at)}.
+					Conta criada em {formatDate(created_at)} com ultima alteração no dia {formatDate(updated_at)}.
 				</p>
-				<p>O usuário possui {public_repos} repositórios públicos</p>{" "}
-				{/* botão que liste abaixo os repositórios com nome, descrição e clicáveis para acessar o repositório no github */}
+				<p>
+					{name.split(" ")[0]} possui {public_repos} repositórios públicos.
+				</p>{" "}
 			</GitHubInfos>
 		</UserInfosContainer>
 	);
@@ -68,9 +72,12 @@ export default function UserInfos({ userName }) {
 
 const UserInfosContainer = styled.div`
 	padding: 50px;
+	border: 1px solid rgb(224, 224, 224);
+	box-shadow: 4px 4px 8px 1px var(--text-main);
+	width: 95%;
 
 	span {
-		color: gray;
+		color: rgb(206, 206, 206);
 	}
 	strong {
 		font-size: 20px;
@@ -85,6 +92,8 @@ const PessoalInfos = styled.div`
 	div {
 		display: flex;
 		align-items: center;
+		justify-content: space-evenly;
+		width: 100%;
 		img {
 			border-radius: 50%;
 			width: 120px;

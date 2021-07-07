@@ -2,20 +2,17 @@ import styled from "styled-components";
 
 import Title from "../../components/Title";
 import SideMenu from "../../components/SideMenu.js/SideMenu";
-import { useState } from "react";
-import DebounceInput from "./DebouceInput";
+import DebounceInput from "./inputSearch/DebouceInput";
 import UserInfos from "./UserInfos";
 
 export default function Home() {
-	const [userName, setUserName] = useState('');
-
 	return (
 		<HomeContainer>
 			<SideMenu />
 			<Content>
 				<Title content="Buscador de Usuários do Github!" />
-				<DebounceInput setValue={setUserName} value={userName}/>
-                <UserInfos userName={userName}/>
+				<DebounceInput />
+				<UserInfos />
 			</Content>
 		</HomeContainer>
 	);
