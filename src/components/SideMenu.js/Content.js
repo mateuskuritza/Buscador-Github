@@ -18,4 +18,5 @@ const ContentContainer = styled.div`
     flex-direction: column;
     width: 100%;
     margin-top: 30px;
+    
 `;

@@ -33,6 +33,7 @@ const SuggestionContainer = styled.div`
 	align-items: center;
 	cursor: pointer;
 	padding: 5px;
+    
 	img {
 		border-radius: 50%;
 		width: 40px;

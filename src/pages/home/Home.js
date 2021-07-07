@@ -1,31 +1,17 @@
-import styled from "styled-components";
-
 import Title from "../../components/Title";
-import SideMenu from "../../components/SideMenu.js/SideMenu";
 import DebounceInput from "./inputSearch/DebouceInput";
 import UserInfos from "./UserInfos";
-
+import SideMenuResponsive from "../../components/SideMenu.js/SideMenuResponsive";
+import { PageContainer, Content } from "../../components/PageConfig";
 export default function Home() {
 	return (
-		<HomeContainer>
-			<SideMenu />
+		<PageContainer>
+			<SideMenuResponsive />
 			<Content>
 				<Title content="Buscador de Usuários do Github!" />
 				<DebounceInput />
 				<UserInfos />
 			</Content>
-		</HomeContainer>
+		</PageContainer>
 	);
 }
-
-const HomeContainer = styled.div`
-	width: 100%;
-	display: flex;
-`;
-
-const Content = styled.div`
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-`;
