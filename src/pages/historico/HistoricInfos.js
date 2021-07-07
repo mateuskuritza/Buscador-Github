@@ -32,8 +32,8 @@ export default function HistoricInfos() {
 					</tr>
 				</thead>
 				<tbody>
-					{searchs.map((s) => (
-						<tr onClick={() => searchThis(s.userName)}>
+					{searchs.map((s, i) => (
+						<tr key={i} onClick={() => searchThis(s.userName)}>
 							<td>{s.userName.substring(0, 15)}</td>
 							<td>{s.hour}</td>
 							<td>{s.date}</td>

@@ -7,6 +7,8 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 import History from "./pages/historico/History";
 import Home from "./pages/home/Home";
+import Repositories from "./pages/repositorios/Repositories";
+
 
 import UserNameContext from "./contexts/UserNameContext";
 
@@ -19,6 +21,7 @@ function App() {
 				<Switch>
 					<Route path="/" exact component={Home} />
 					<Route path="/historico" exact component={History} />
+					<Route path="/repositorios" exact component={Repositories} />
 				</Switch>
 			</Router>
 		</UserNameContext.Provider>
