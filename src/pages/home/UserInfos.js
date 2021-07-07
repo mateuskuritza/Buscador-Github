@@ -1,5 +1,7 @@
 import { useContext, useEffect } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import useGetUserInfos from "../../Requests/useGetUserInfos";
 
 import Loader from "react-loader-spinner";
@@ -63,9 +65,9 @@ export default function UserInfos() {
 					Conta criada em {formatDate(created_at)} com ultima alteração no dia {formatDate(updated_at)}.
 				</p>
 				<br></br>
-				<p>
-					{name ? name + " possui" : "Possui "} {public_repos} repositórios públicos.
-				</p>{" "}
+				<Link to="/repositorios">
+					{name ? name + " possui" : "Possui "} {public_repos} repositórios públicos, clique aqui para conferir.
+				</Link>{" "}
 			</GitHubInfos>
 		</UserInfosContainer>
 	);
@@ -120,4 +122,9 @@ const PessoalInfos = styled.div`
 
 const GitHubInfos = styled.div`
 	margin-top: 20px;
+
+    a{
+        text-decoration: underline;
+        font-size: 14px;
+    }
 `;
