@@ -23,6 +23,8 @@ export default function UserInfos({ userName }) {
 		return value || <span>Não informado</span>;
 	}
 
+    if(!userName) return <h3>Pesquise por um usuário!</h3>;
+
 	if (loading) {
 		return <Loader type="Puff" color="#000000" height={300} width={300} timeout={3000} />;
 	}

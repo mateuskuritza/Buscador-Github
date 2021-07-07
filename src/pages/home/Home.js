@@ -7,14 +7,14 @@ import DebounceInput from "./DebouceInput";
 import UserInfos from "./UserInfos";
 
 export default function Home() {
-	const [userName, setUserName] = useState("");
+	const [userName, setUserName] = useState('');
 
 	return (
 		<HomeContainer>
 			<SideMenu />
 			<Content>
 				<Title content="Buscador de Usuários do Github!" />
-				<DebounceInput setValue={setUserName} />
+				<DebounceInput setValue={setUserName} value={userName}/>
                 <UserInfos userName={userName}/>
 			</Content>
 		</HomeContainer>

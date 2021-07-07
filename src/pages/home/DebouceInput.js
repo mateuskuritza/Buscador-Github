@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { DebounceInput as DbInput } from "react-debounce-input";
 import { BiSearchAlt as SearchIcon } from "react-icons/bi";
 
-export default function DebounceInput({ setValue }) {
+export default function DebounceInput({ value, setValue }) {
 	return (
 		<DebounceInputContainer>
 			<DbInput
@@ -10,6 +10,7 @@ export default function DebounceInput({ setValue }) {
 				minLength={3}
 				debounceTimeout={500}
 				onChange={(e) => setValue(e.target.value)}
+                value={value}
 			/>
 			<SearchIcon className="icon" />
 		</DebounceInputContainer>
@@ -19,7 +20,7 @@ export default function DebounceInput({ setValue }) {
 const DebounceInputContainer = styled.div`
 	width: 35%;
 	min-width: 220px;
-	margin-top: 15px;
+	margin: 20px 0;
 	position: relative;
 	input {
 		width: 100%;
