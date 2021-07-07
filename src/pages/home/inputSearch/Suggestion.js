@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import { useContext } from "react";
 import styled from "styled-components";
 import UserNameContext from "../../../contexts/UserNameContext";
@@ -5,8 +6,22 @@ import UserNameContext from "../../../contexts/UserNameContext";
 export default function Suggestion({ userName, avatarUrl }) {
 	const { setUserName } = useContext(UserNameContext);
 
+	function registerNewSearch() {
+		setUserName(userName);
+
+		const now = dayjs().format("HH:MM:ss DD/MM/YYYY").split(" ");
+		const newSearch = { userName, date: now[1], hour: now[0] };
+		const localSearchs = JSON.parse(localStorage.getItem("search"));
+		if (localSearchs) {
+			const newLocalStorage = [newSearch, ...localSearchs];
+			localStorage.setItem("search", JSON.stringify(newLocalStorage));
+			return;
+		}
+		localStorage.setItem("search", JSON.stringify([newSearch]));
+	}
+
 	return (
-		<SuggestionContainer onClick={() => setUserName(userName)}>
+		<SuggestionContainer onClick={() => registerNewSearch()}>
 			<img src={avatarUrl} alt="user avatar" />
 			<p>{userName.substring(0, 15)}</p>
 		</SuggestionContainer>

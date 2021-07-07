@@ -11,7 +11,7 @@ import UserNameContext from "../../contexts/UserNameContext";
 
 export default function UserInfos() {
 	const { userName } = useContext(UserNameContext);
-	console.log(userName);
+
 	const { loading, error, data, fetchData } = useGetUserInfos(userName);
 
 	useEffect(() => {
@@ -23,7 +23,7 @@ export default function UserInfos() {
 	}
 
 	function existingValue(value) {
-		return value || <span>Não informado</span>;
+		return value || <span>não informado</span>;
 	}
 
 	if (!userName) return <h3>Pesquise por um usuário!</h3>;
@@ -41,7 +41,7 @@ export default function UserInfos() {
 				<strong>{name}</strong>
 				<div>
 					<img src={avatar_url} alt="User avatar" />
-					<p>{existingValue(bio)}</p>
+					{bio ? <p> {bio} </p> : null}
 				</div>
 			</PessoalInfos>
 
@@ -63,7 +63,7 @@ export default function UserInfos() {
 					Conta criada em {formatDate(created_at)} com ultima alteração no dia {formatDate(updated_at)}.
 				</p>
 				<p>
-					{name.split(" ")[0]} possui {public_repos} repositórios públicos.
+					{name ? name + "possui" : "Possui"} {public_repos} repositórios públicos.
 				</p>{" "}
 			</GitHubInfos>
 		</UserInfosContainer>
@@ -71,7 +71,7 @@ export default function UserInfos() {
 }
 
 const UserInfosContainer = styled.div`
-	padding: 50px;
+	padding: 20px 40px;
 	border: 1px solid rgb(224, 224, 224);
 	box-shadow: 4px 4px 8px 1px var(--text-main);
 	width: 95%;
@@ -94,6 +94,7 @@ const PessoalInfos = styled.div`
 		align-items: center;
 		justify-content: space-evenly;
 		width: 100%;
+		margin-top: 10px;
 		img {
 			border-radius: 50%;
 			width: 120px;

@@ -8,5 +8,5 @@ const TitleContainer = styled.p`
 	font-family: "Permanent marker", cursive;
 	font-size: clamp(1em, 1.2em + 1vw, 2em);
 	cursor: default;
-	margin-top: 20px;
+	margin: 20px auto;
 `;

@@ -17,7 +17,7 @@ export default function Suggestions({ searchName }) {
 	return (
 		<SuggestionsContainer>
 			{data?.items?.map((u) => (
-				<Suggestion userName={u.login} avatarUrl={u.avatar_url} />
+				<Suggestion key={u.id} userName={u.login} avatarUrl={u.avatar_url} />
 			))}
 		</SuggestionsContainer>
 	);
