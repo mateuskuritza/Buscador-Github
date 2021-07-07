@@ -37,5 +37,6 @@ const GitHubDocsContainer = styled.div`
 		min-width: 32px;
 		color: rgba(255, 255, 255, 1);
 		font-size: 32px;
+		margin-right: 8px;
 	}
 `;

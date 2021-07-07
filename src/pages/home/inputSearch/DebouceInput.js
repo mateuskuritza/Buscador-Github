@@ -38,18 +38,18 @@ const DebounceInputContainer = styled.div`
 		width: 100%;
 		height: 30px;
 		outline: none;
-		border: 2px solid rgba(0, 0, 150, 1);
+		border: 2px solid var(--text-main);
 		padding-left: 10px;
 		border-radius: 20px;
 
 		::placeholder {
-			color: rgba(160, 160, 255, 1);
+			color: gray;
 		}
 	}
 
 	.icon {
 		position: absolute;
-		color: rgba(0, 0, 150, 1);
+		color: var(--text-main);
 		right: 5px;
 		top: 6px;
 	}
