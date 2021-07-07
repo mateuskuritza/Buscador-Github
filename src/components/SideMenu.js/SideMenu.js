@@ -1,25 +1,27 @@
 import styled from "styled-components";
-
 import Content from "./Content";
 import Topo from "./Top";
-export default function SideMenu() {
+
+export default function SideMenu({ mobile }) {
 	return (
-		<SideMenuContainer>
-            <Topo />
-            <Content />
+		<SideMenuContainer mobile={mobile}>
+			<Topo />
+			<Content />
 		</SideMenuContainer>
 	);
 }
 
 const SideMenuContainer = styled.div`
-	width: 25vw;
-    min-width: 150px;
-    height: 100vh;
-    background-color: var(--side-menu-background-main);
+	width: ${(props) => (props.mobile ? "75vw" : "30vw")};
+	position: ${(props) => (props.mobile ? "fixed" : "inherit")};
+	top: 0;
+	right: clamp(20px, 25vw, 1000px);
+	height: 100vh;
+	min-width: 240px;
+	background-color: var(--side-menu-background-main);
 
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-
-    padding: 20px 10px 0 10px;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	z-index: 10;
 `;

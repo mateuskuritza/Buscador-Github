@@ -1,29 +1,17 @@
-import styled from "styled-components";
-import SideMenu from "../../components/SideMenu.js/SideMenu";
+import SideMenuResponsive from "../../components/SideMenu.js/SideMenuResponsive";
 
 import Title from "../../components/Title";
 import HistoricInfos from "./HistoricInfos";
+import { PageContainer, Content } from "../../components/PageConfig";
 
 export default function History() {
 	return (
-		<HistoryContainer>
-			<SideMenu />
+		<PageContainer>
+			<SideMenuResponsive />
 			<Content>
 				<Title content="Histórico de Pesquisas" />
 				<HistoricInfos />
 			</Content>
-		</HistoryContainer>
+		</PageContainer>
 	);
 }
-
-const HistoryContainer = styled.div`
-	width: 100%;
-	display: flex;
-`;
-
-const Content = styled.div`
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-`;

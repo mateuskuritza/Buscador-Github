@@ -62,8 +62,9 @@ export default function UserInfos() {
 				<p>
 					Conta criada em {formatDate(created_at)} com ultima alteração no dia {formatDate(updated_at)}.
 				</p>
+				<br></br>
 				<p>
-					{name ? name + "possui" : "Possui"} {public_repos} repositórios públicos.
+					{name ? name + " possui" : "Possui "} {public_repos} repositórios públicos.
 				</p>{" "}
 			</GitHubInfos>
 		</UserInfosContainer>
@@ -74,13 +75,18 @@ const UserInfosContainer = styled.div`
 	padding: 20px 40px;
 	border: 1px solid rgb(224, 224, 224);
 	box-shadow: 4px 4px 8px 1px var(--text-main);
-	width: 95%;
+	width: 90%;
 
 	span {
 		color: rgb(206, 206, 206);
 	}
 	strong {
 		font-size: 20px;
+	}
+
+	@media (max-width: 480px) {
+		padding: 5px 10px;
+		font-size: 12px;
 	}
 `;
 
@@ -95,10 +101,19 @@ const PessoalInfos = styled.div`
 		justify-content: space-evenly;
 		width: 100%;
 		margin-top: 10px;
+
+		@media (max-width: 480px) {
+			flex-direction: column;
+		}
+
 		img {
 			border-radius: 50%;
 			width: 120px;
-			margin-right: 20px;
+			margin: 0 0 10px 0;
+		}
+
+		p {
+			margin: 0 auto;
 		}
 	}
 `;

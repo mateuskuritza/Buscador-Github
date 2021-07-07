@@ -9,7 +9,7 @@ export default function DebounceInput() {
 	const [showingSuggestions, setShowingSuggestions] = useState(false);
 
 	return (
-		<DebounceInputContainer>
+		<DebounceInputContainer showing={showingSuggestions}>
 			<DbInput
 				placeholder="Quem você deseja encontrar?"
 				minLength={3}
@@ -34,6 +34,8 @@ const DebounceInputContainer = styled.div`
 	min-width: 220px;
 	margin: 20px 0;
 	position: relative;
+    z-index: ${props => props.showing ? "1" : "-1"};
+    
 	input {
 		width: 100%;
 		height: 30px;

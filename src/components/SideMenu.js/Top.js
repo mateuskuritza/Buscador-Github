@@ -22,12 +22,12 @@ const TopContainer = styled.div`
 	width: 100%;
 	color: var(--side-menu-text-main);
 	font-size: 10px;
+	padding: 15px 5px 0 5px;
 `;
 
 const GitHubDocsContainer = styled.div`
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
 	width: 100%;
 	max-width: 80%;
 	font-size: 16px;
