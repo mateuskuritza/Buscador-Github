@@ -21,7 +21,7 @@ const TopContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	color: ${(props) => props.theme.colors.sideMenuTextMain};
+	color: ${(props) => props?.theme?.colors?.sideMenuTextMain};
 	font-size: 10px;
 	padding: 15px 5px 0 5px;
 `;
