@@ -1,6 +1,7 @@
-import dayjs from "dayjs";
 import { useContext } from "react";
 import styled from "styled-components";
+import dayjs from "dayjs";
+
 import UserNameContext from "../../../contexts/UserNameContext";
 
 export default function Suggestion({ userName, avatarUrl }) {
@@ -33,7 +34,7 @@ const SuggestionContainer = styled.div`
 	align-items: center;
 	cursor: pointer;
 	padding: 5px;
-    
+
 	img {
 		border-radius: 50%;
 		width: 40px;
@@ -42,6 +43,6 @@ const SuggestionContainer = styled.div`
 	}
 
 	:hover {
-		background-color: rgb(221, 219, 255);
+		background-color: ${(props) => props.theme.colors.sideMenuBackgroundMain};
 	}
 `;

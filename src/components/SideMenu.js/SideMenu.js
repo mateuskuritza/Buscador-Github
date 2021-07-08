@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import Content from "./Content";
 import Topo from "./Top";
 
@@ -18,7 +19,7 @@ const SideMenuContainer = styled.div`
 	right: clamp(20px, 25vw, 1000px);
 	height: 100vh;
 	min-width: 240px;
-	background-color: var(--side-menu-background-main);
+	background-color: ${(props) => props.theme.colors.sideMenuBackgroundMain};
 
 	display: flex;
 	align-items: flex-start;

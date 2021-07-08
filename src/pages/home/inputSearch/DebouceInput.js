@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { useState } from "react";
+
 import { DebounceInput as DbInput } from "react-debounce-input";
 import { BiSearchAlt as SearchIcon } from "react-icons/bi";
+
 import Suggestions from "./Suggestions";
 
 export default function DebounceInput() {
@@ -34,12 +36,12 @@ const DebounceInputContainer = styled.div`
 	min-width: 220px;
 	margin: 20px 0;
 	position: relative;
-    
+
 	input {
 		width: 100%;
 		height: 30px;
 		outline: none;
-		border: 2px solid var(--text-main);
+		border: 2px solid ${(props) => props.theme.colors.textMain};
 		padding-left: 10px;
 		border-radius: 20px;
 
@@ -50,7 +52,7 @@ const DebounceInputContainer = styled.div`
 
 	.icon {
 		position: absolute;
-		color: var(--text-main);
+		color: ${(props) => props.theme.colors.textMain};
 		right: 5px;
 		top: 6px;
 	}

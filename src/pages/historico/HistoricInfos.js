@@ -1,6 +1,7 @@
+import styled from "styled-components";
 import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import styled from "styled-components";
+
 import UserNameContext from "../../contexts/UserNameContext";
 
 export default function HistoricInfos() {
@@ -47,22 +48,22 @@ export default function HistoricInfos() {
 
 const HistoricInfosContainer = styled.div`
 	margin: 50px auto;
-	border: 1px solid var(--text-main);
-	box-shadow: 1px 1px 2px 1px var(--text-main);
+	border: 1px solid ${(props) => props.theme.colors.textMain};
+	box-shadow: 1px 1px 2px 1px ${(props) => props.theme.colors.textMain};
 
 	thead > tr > th {
 		font-weight: 700;
 		padding: 4px;
-        border-bottom: 1px solid var(--text-main);
+		border-bottom: 1px solid ${(props) => props.theme.colors.textMain};
 	}
 	td {
 		padding: 10px 8px;
-        border-left: 1px solid var(--text-main);
+		border-left: 1px solid ${(props) => props.theme.colors.textMain};
 	}
 
-    td:first-of-type{
-        border-left: none;
-    }
+	td:first-of-type {
+		border-left: none;
+	}
 
 	tbody > tr {
 		cursor: pointer;

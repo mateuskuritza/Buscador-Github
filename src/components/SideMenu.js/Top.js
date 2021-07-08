@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { VscGithub } from "react-icons/vsc";
 
 export default function Top() {
@@ -20,7 +21,7 @@ const TopContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	color: var(--side-menu-text-main);
+	color: ${(props) => props.theme.colors.sideMenuTextMain};
 	font-size: 10px;
 	padding: 15px 5px 0 5px;
 `;
