@@ -104,7 +104,7 @@ const PessoalInfos = styled.div`
 		width: 100%;
 		margin-top: 10px;
 
-		@media (max-width: 500px) {
+		@media (max-width: 630px) {
 			flex-direction: column;
 		}
 
