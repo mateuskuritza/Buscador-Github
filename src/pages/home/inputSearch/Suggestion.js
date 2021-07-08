@@ -9,8 +9,7 @@ export default function Suggestion({ userName, avatarUrl }) {
 
 	function registerNewSearch() {
 		setUserName(userName);
-
-		const now = dayjs().format("HH:MM:ss DD/MM/YYYY").split(" ");
+		const now = dayjs().format("HH:mm:ss DD/MM/YYYY").split(" ");
 		const newSearch = { userName, date: now[1], hour: now[0] };
 		const localSearchs = JSON.parse(localStorage.getItem("search"));
 		if (localSearchs) {
