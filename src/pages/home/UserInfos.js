@@ -111,7 +111,7 @@ const PessoalInfos = styled.div`
 		img {
 			border-radius: 50%;
 			width: 120px;
-			margin: 0 0 10px 0;
+			margin: 10px;
 		}
 
 		p {
@@ -123,8 +123,8 @@ const PessoalInfos = styled.div`
 const GitHubInfos = styled.div`
 	margin-top: 20px;
 
-    a{
-        text-decoration: underline;
-        font-size: 14px;
-    }
+	a {
+		text-decoration: underline;
+		font-size: 14px;
+	}
 `;

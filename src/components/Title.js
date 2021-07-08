@@ -11,10 +11,10 @@ const TitleContainer = styled.p`
 	padding: 20px 5px 0 5px;
 	text-align: center;
 
-    @media (max-width: 500px) {
+	@media (max-width: 500px) {
 		text-align: left;
-        font-size: 1.2em;
-        padding: 0;
-        padding-right: 50px;
+		font-size: 1.2em;
+		padding: 0;
+		padding-right: 50px;
 	}
 `;

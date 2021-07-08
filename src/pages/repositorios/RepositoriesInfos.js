@@ -21,7 +21,7 @@ export default function RepositoriesInfos({ userName }) {
 	return (
 		<RepositoriesContainer>
 			{data?.map((r) => (
-				<Repository key={r.id} name={r.name} description={r.description} url={r.html_url}/>
+				<Repository key={r.id} name={r.name} description={r.description} url={r.html_url} />
 			))}
 		</RepositoriesContainer>
 	);

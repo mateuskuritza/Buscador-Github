@@ -47,16 +47,23 @@ export default function HistoricInfos() {
 
 const HistoricInfosContainer = styled.div`
 	margin: 50px auto;
-	border: 1px solid rgb(224, 224, 224);
+	border: 1px solid var(--text-main);
 	box-shadow: 1px 1px 2px 1px var(--text-main);
 
 	thead > tr > th {
 		font-weight: 700;
 		padding: 4px;
+        border-bottom: 1px solid var(--text-main);
 	}
 	td {
-		padding: 10px 5px;
+		padding: 10px 8px;
+        border-left: 1px solid var(--text-main);
 	}
+
+    td:first-of-type{
+        border-left: none;
+    }
+
 	tbody > tr {
 		cursor: pointer;
 		:hover {
