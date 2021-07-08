@@ -49,6 +49,7 @@ const ButtonContainer = styled.div`
 	user-select: none;
 	cursor: pointer;
 	margin: 0 0 -20px auto;
+	z-index: 3;
 
 	.path-burger {
 		position: absolute;

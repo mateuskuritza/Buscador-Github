@@ -23,5 +23,4 @@ const SideMenuContainer = styled.div`
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
-	z-index: 10;
 `;
