@@ -1,14 +1,14 @@
 import { useContext, useEffect } from "react";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
-
-import useGetUserInfos from "../../Requests/useGetUserInfos";
-
-import Loader from "react-loader-spinner";
+import styled from "styled-components";
 import dayjs from "dayjs";
+import Loader from "react-loader-spinner";
 
 import { MdGpsFixed as GpsIcon, MdBusinessCenter as BusinessIcon, MdWebAsset as WebIcon } from "react-icons/md";
 import { FiTwitter as TwitterIcon } from "react-icons/fi";
+
+import useGetUserInfos from "../../Requests/useGetUserInfos";
+
 import UserNameContext from "../../contexts/UserNameContext";
 
 export default function UserInfos() {
@@ -76,7 +76,7 @@ export default function UserInfos() {
 const UserInfosContainer = styled.div`
 	padding: 20px 40px;
 	border: 1px solid rgb(224, 224, 224);
-	box-shadow: 4px 4px 8px 1px var(--text-main);
+	box-shadow: 4px 4px 8px 1px ${(props) => props.theme.colors.textMain};
 	width: 90%;
 
 	span {

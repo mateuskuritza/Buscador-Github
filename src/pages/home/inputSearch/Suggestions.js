@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import styled from "styled-components";
-import useGetUsers from "../../../Requests/useGetUsers";
+
 import Suggestion from "./Suggestion";
+
+import useGetUsers from "../../../Requests/useGetUsers";
 
 export default function Suggestions({ searchName }) {
 	const { loading, error, data, fetchData } = useGetUsers(searchName);
@@ -32,7 +34,8 @@ const SuggestionsContainer = styled.div`
 	width: 87%;
 	border-radius: 0 0 10px 10px;
 
-	background-color: rgb(250, 249, 255);
+	background-color: ${(props) => props.theme.colors.sideMenuBackgroundSecondary};
+	color: ${(props) => props.theme.colors.sideMenuTextMain};
 	border: 1px solid rgb(0, 8, 76);
 	border-top: none;
 `;

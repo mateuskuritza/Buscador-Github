@@ -1,16 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Blinker&display=swap');
+import { createGlobalStyle } from "styled-components";
 
-:root {
-  --background-main: rgba(255, 255, 255, 1);
-  --text-main: rgba(0, 0, 0, 1);
-
-
-  --side-menu-background-main: rgba(22, 27, 34, 1);
-  --side-menu-background-secondary: rgb(55, 60, 68);
-  --side-menu-text-main: rgb(218, 218, 218);
-}
+export default createGlobalStyle`
 
 * {
   box-sizing: border-box;
@@ -28,8 +18,8 @@ a {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--background-main);
-  color: var(--text-main);
+  background-color: ${(props) => props.theme.colors.backgroundMain};
+  color: ${(props) => props.theme.colors.textMain};
 }
 
 #root {
@@ -209,3 +199,4 @@ body {
         transform: rotate(0deg);
     }
 }
+`;
