@@ -34,8 +34,8 @@ const SuggestionsContainer = styled.div`
 	width: 87%;
 	border-radius: 0 0 10px 10px;
 
-	background-color: ${(props) => props.theme.colors.sideMenuBackgroundSecondary};
-	color: ${(props) => props.theme.colors.sideMenuTextMain};
+	background-color: ${(props) => props?.theme?.colors?.sideMenuBackgroundSecondary};
+	color: ${(props) => props?.theme?.colors?.sideMenuTextMain};
 	border: 1px solid rgb(0, 8, 76);
 	border-top: none;
 `;

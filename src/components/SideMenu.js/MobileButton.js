@@ -36,7 +36,7 @@ export default function MobileButton({ isClosed, setIsClosed }) {
 }
 
 const ButtonContainer = styled.div`
-	--color: ${(props) => props.theme.colors.textMain};
+	--color: ${(props) => props?.theme?.colors?.textMain};
 	--blue: transparent; // background color
 	--animation: 0.6s; // animation speed
 	--scale: 1; // icon scale 68/68 default

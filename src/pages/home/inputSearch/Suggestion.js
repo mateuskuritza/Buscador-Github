@@ -42,6 +42,6 @@ const SuggestionContainer = styled.div`
 	}
 
 	:hover {
-		background-color: ${(props) => props.theme.colors.sideMenuBackgroundMain};
+		background-color: ${(props) => props?.theme?.colors?.sideMenuBackgroundMain};
 	}
 `;

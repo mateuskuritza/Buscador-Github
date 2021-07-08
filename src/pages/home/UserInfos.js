@@ -33,7 +33,7 @@ export default function UserInfos() {
 	if (loading) {
 		return <Loader type="Puff" color={"red"} height={300} width={300} timeout={3000} />;
 	}
-	if (error) return <h3>Usuário não encontrado!</h3>;
+	if (error) return <h3>Usuário não encontrado ou limite da API atingido, aguarde 1min e tente novamente!</h3>;
 
 	const { name, avatar_url, location, blog, public_repos, created_at, updated_at, company, twitter, bio } = data;
 
@@ -76,7 +76,7 @@ export default function UserInfos() {
 const UserInfosContainer = styled.div`
 	padding: 20px 40px;
 	border: 1px solid rgb(224, 224, 224);
-	box-shadow: 4px 4px 8px 1px ${(props) => props.theme.colors.textMain};
+	box-shadow: 4px 4px 8px 1px ${(props) => props?.theme?.colors?.textMain};
 	width: 90%;
 
 	span {
@@ -104,7 +104,7 @@ const PessoalInfos = styled.div`
 		width: 100%;
 		margin-top: 10px;
 
-		@media (max-width: 480px) {
+		@media (max-width: 500px) {
 			flex-direction: column;
 		}
 
