@@ -86,9 +86,9 @@ const UserInfosContainer = styled.div`
 		font-size: 20px;
 	}
 
-	@media (max-width: 480px) {
-		padding: 5px;
-		font-size: 12px;
+	@media (max-width: 630px) {
+		padding: 5%;
+		font-size: 14px;
 	}
 `;
 
@@ -104,7 +104,7 @@ const PessoalInfos = styled.div`
 		width: 100%;
 		margin-top: 10px;
 
-		@media (max-width: 630px) {
+		@media (max-width: 650px) {
 			flex-direction: column;
 		}
 
