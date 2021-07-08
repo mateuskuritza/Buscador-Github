@@ -87,7 +87,7 @@ const UserInfosContainer = styled.div`
 	}
 
 	@media (max-width: 480px) {
-		padding: 5px 10px;
+		padding: 5px;
 		font-size: 12px;
 	}
 `;
