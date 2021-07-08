@@ -62,7 +62,7 @@ export default function UserInfos() {
 
 			<GitHubInfos>
 				<p>
-					Conta criada em {formatDate(created_at)} com ultima alteração no dia {formatDate(updated_at)}.
+					Conta criada em {formatDate(created_at)} com última alteração no dia {formatDate(updated_at)}.
 				</p>
 				<br></br>
 				<Link to="/repositorios">
