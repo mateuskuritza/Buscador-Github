@@ -16,4 +16,4 @@ Além disso também foram utilizadas as bibliotecas:
 ### Instruções de uso:
 > Foi realizado o deploy do sistema na **Vercel** <a href="https://desafio-vivo.vercel.app/"> aqui</a>;
 
-> Também pode ser utilizado ao realizar o comando "git clone" do link do repositório (git clone https://github.com/mateuskuritza/Desafio_Vivo.git) e "npm start" na pasta do projeto.
+> Também pode ser utilizado ao realizar o comando "git clone" do link do repositório (git clone https://github.com/mateuskuritza/Desafio_Vivo.git) e o comando "npm start" com o terminal na pasta do projeto.
