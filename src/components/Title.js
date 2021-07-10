@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export default function Title({ content }) {
-	return <TitleContainer>{content}</TitleContainer>;
+    return <TitleContainer>{content}</TitleContainer>;
 }
 
 const TitleContainer = styled.p`
@@ -11,10 +11,8 @@ const TitleContainer = styled.p`
 	padding: 20px 5px 10px 5px;
 	text-align: center;
 
-	@media (max-width: 500px) {
-		text-align: left;
+	@media (max-width: 630px) {
 		font-size: 1.2em;
-		padding: 0;
-		padding-right: 50px;
+		padding: 20px;
 	}
 `;

@@ -1,56 +1,56 @@
 import styled from "styled-components";
 
-import SideMenu from "./SideMenu";
+export default function MobileButton({ sideMenuClosed, setSideMenuClosed }) {
+    return (
+        <ButtonContainer sideMenuClosed={sideMenuClosed} onClick={() => setSideMenuClosed(!sideMenuClosed)} className={sideMenuClosed ? "is-closed" : "is-open"}>
+            <div className="burger-icon">
+                <div className="burger-container">
+                    <span className="burger-bun-top"></span>
+                    <span className="burger-filling"></span>
+                    <span className="burger-bun-bot"></span>
+                </div>
+            </div>
 
-export default function MobileButton({ isClosed, setIsClosed }) {
-	return (
-		<ButtonContainer isClosed={isClosed} onClick={() => setIsClosed(!isClosed)} className={isClosed ? "is-closed" : "is-open"}>
-			<div className="burger-icon">
-				<div className="burger-container">
-					<span className="burger-bun-top"></span>
-					<span className="burger-filling"></span>
-					<span className="burger-bun-bot"></span>
-				</div>
-			</div>
-
-			<svg width="0" height="0">
-				<mask id="mask">
-					<path
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						stroke="#ff0000"
-						strokeMiterlimit="10"
-						strokeWidth="4"
-						d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4"
-					/>
-				</mask>
-			</svg>
-			<div className="path-burger">
-				<div className="animate-path">
-					<div className="path-rotation"></div>
-				</div>
-			</div>
-			{!isClosed && <SideMenu mobile />}
-		</ButtonContainer>
-	);
+            <svg width="0" height="0">
+                <mask id="mask">
+                    <path
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        stroke="#ff0000"
+                        strokeMiterlimit="10"
+                        strokeWidth="4"
+                        d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4"
+                    />
+                </mask>
+            </svg>
+            <div className="path-burger">
+                <div className="animate-path">
+                    <div className="path-rotation"></div>
+                </div>
+            </div>
+        </ButtonContainer>
+    );
 }
 
 const ButtonContainer = styled.div`
-	--color: ${(props) => props?.theme?.colors?.textMain};
+	--color: ${(props) => props.sideMenuClosed ? "black" : "white"};
 	--blue: transparent; // background color
 	--animation: 0.6s; // animation speed
 	--scale: 1; // icon scale 68/68 default
 
 	transform: scale(var(--scale));
 	display: block;
-	width: 68px;
 	padding-top: 20px;
+	width: 68px;
 	height: 68px;
 	background: var(--blue);
 	user-select: none;
 	cursor: pointer;
-	margin: 0 0 -20px auto;
+
+    position: fixed;
 	z-index: 3;
+    right: 0;
+    top: 10px;
 
 	.path-burger {
 		position: absolute;

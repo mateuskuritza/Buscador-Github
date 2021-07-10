@@ -23,7 +23,11 @@ body {
 }
 
 #root {
-  min-height: 100vh;
+  display: flex;
+
+  @media (max-width: 630px) {
+		flex-direction: column;
+	}
 }
 
 @keyframes burger-fill-in {
