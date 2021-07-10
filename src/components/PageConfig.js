@@ -16,7 +16,6 @@ const Content = styled.div`
 	flex-direction: column;
 	align-items: center;
     min-height: 100vh;
-    overflow-y: scroll;
 `;
 
 export { PageContainer, Content };

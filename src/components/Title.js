@@ -13,6 +13,6 @@ const TitleContainer = styled.p`
 
 	@media (max-width: 630px) {
 		font-size: 1.2em;
-		padding: 20px;
+		padding: 20px 40px;
 	}
 `;

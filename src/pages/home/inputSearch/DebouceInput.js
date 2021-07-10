@@ -41,7 +41,7 @@ const DebounceInputContainer = styled.div`
 		width: 100%;
 		height: 30px;
 		outline: none;
-		border: 2px solid ${(props) => props?.theme?.colors?.textMain};
+		border: 2px solid ${(props) => props?.theme?.colors?.second_color};
 		padding-left: 10px;
 		border-radius: 20px;
 
@@ -52,7 +52,7 @@ const DebounceInputContainer = styled.div`
 
 	.icon {
 		position: absolute;
-		color: ${(props) => props?.theme?.colors?.textMain};
+		color: ${(props) => props?.theme?.colors?.second_color};
 		right: 5px;
 		top: 6px;
 	}

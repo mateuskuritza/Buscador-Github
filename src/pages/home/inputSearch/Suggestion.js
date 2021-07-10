@@ -33,7 +33,7 @@ const SuggestionContainer = styled.div`
 	align-items: center;
 	cursor: pointer;
 	padding: 5px;
-
+    color: ${(props) => props?.theme?.colors?.second_color};
 	img {
 		border-radius: 50%;
 		width: 40px;
@@ -42,6 +42,6 @@ const SuggestionContainer = styled.div`
 	}
 
 	:hover {
-		background-color: ${(props) => props?.theme?.colors?.sideMenuBackgroundMain};
+		background-color: ${(props) => props?.theme?.colors?.fourth_color};
 	}
 `;
