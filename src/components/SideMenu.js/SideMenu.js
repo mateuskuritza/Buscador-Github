@@ -19,7 +19,7 @@ const SideMenuContainer = styled.div`
 	right: clamp(20px, 25vw, 1000px);
 	height: 100vh;
 	min-width: 240px;
-	background-color: ${(props) => props.theme.colors.sideMenuBackgroundMain};
+	background-color: ${(props) => props.theme.colors.second_color};
 
 	display: flex;
 	align-items: flex-start;
