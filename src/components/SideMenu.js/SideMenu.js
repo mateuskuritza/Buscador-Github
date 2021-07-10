@@ -13,8 +13,8 @@ export default function SideMenu({ mobile }) {
 }
 
 const SideMenuContainer = styled.div`
-	width: ${(props) => (props.mobile ? "75vw" : "30vw")};
-	position: ${(props) => (props.mobile ? "fixed" : "inherit")};
+	width: ${(props) => (props?.mobile ? "75vw" : "30vw")};
+	position: ${(props) => (props?.mobile ? "fixed" : "inherit")};
 	top: 0;
 	right: clamp(20px, 25vw, 1000px);
 	height: 100vh;

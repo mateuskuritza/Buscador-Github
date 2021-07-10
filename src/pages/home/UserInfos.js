@@ -31,9 +31,9 @@ export default function UserInfos() {
 	if (!userName) return <h3>Pesquise por um usuário!</h3>;
 
 	if (loading) {
-		return <Loader type="Puff" color="#000000" height={300} width={300} timeout={3000} />;
+		return <Loader type="Puff" color={"red"} height={300} width={300} timeout={3000} />;
 	}
-	if (error) return <h3>Usuário não encontrado!</h3>;
+	if (error) return <h3>Usuário não encontrado ou limite da API atingido, aguarde 1min e tente novamente!</h3>;
 
 	const { name, avatar_url, location, blog, public_repos, created_at, updated_at, company, twitter, bio } = data;
 
@@ -62,7 +62,7 @@ export default function UserInfos() {
 
 			<GitHubInfos>
 				<p>
-					Conta criada em {formatDate(created_at)} com ultima alteração no dia {formatDate(updated_at)}.
+					Conta criada em {formatDate(created_at)} com última alteração no dia {formatDate(updated_at)}.
 				</p>
 				<br></br>
 				<Link to="/repositorios">
@@ -76,19 +76,19 @@ export default function UserInfos() {
 const UserInfosContainer = styled.div`
 	padding: 20px 40px;
 	border: 1px solid rgb(224, 224, 224);
-	box-shadow: 4px 4px 8px 1px ${(props) => props.theme.colors.textMain};
+	box-shadow: 4px 4px 8px 1px ${(props) => props?.theme?.colors?.textMain};
 	width: 90%;
 
 	span {
-		color: rgb(206, 206, 206);
+		color: rgb(180, 180, 180);
 	}
 	strong {
 		font-size: 20px;
 	}
 
-	@media (max-width: 480px) {
-		padding: 5px 10px;
-		font-size: 12px;
+	@media (max-width: 630px) {
+		padding: 5%;
+		font-size: 14px;
 	}
 `;
 
@@ -104,7 +104,7 @@ const PessoalInfos = styled.div`
 		width: 100%;
 		margin-top: 10px;
 
-		@media (max-width: 480px) {
+		@media (max-width: 650px) {
 			flex-direction: column;
 		}
 

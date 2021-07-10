@@ -12,7 +12,7 @@ export default function Button({ content, to }) {
 const ButtonContainer = styled.button`
 	width: 100%;
 	height: 30px;
-	color: ${(props) => props.theme.colors.sideMenuTextMain};
+	color: ${(props) => props?.theme?.colors?.sideMenuTextMain};
 	font-family: "Blinker", sans-serif;
 	font-size: 20px;
 
@@ -28,6 +28,6 @@ const ButtonContainer = styled.button`
 	}
 	:focus,
 	:hover {
-		background-color: ${(props) => props.theme.colors.sideMenuBackgroundSecondary};
+		background-color: ${(props) => props?.theme?.colors?.sideMenuBackgroundSecondary};
 	}
 `;

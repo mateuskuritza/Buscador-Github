@@ -16,7 +16,7 @@ const RepositoryContainer = styled.div`
 	height: 100px;
 	margin: 10px;
 	border: 1px solid rgb(224, 224, 224);
-	box-shadow: 4px 4px 8px 1px ${(props) => props.theme.colors.textMain};
+	box-shadow: 4px 4px 8px 1px ${(props) => props?.theme?.colors?.textMain};
 	padding: 10px;
 	overflow-y: hidden;
 
