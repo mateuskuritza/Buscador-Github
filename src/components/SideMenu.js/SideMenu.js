@@ -13,9 +13,9 @@ export default function SideMenu({ width }) {
 }
 
 const SideMenuContainer = styled.div`
-	background-color: ${(props) => props?.theme?.colors?.sideMenuBackgroundMain};
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
     width: ${props => props.width >= 630 ? '30vw' : '100%'};
+    background-color: ${(props) => props.theme.colors.second_color};
 `;

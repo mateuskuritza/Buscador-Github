@@ -1,10 +1,10 @@
 export default {
-	title: "light",
-	colors: {
-		backgroundMain: "rgba(255, 255, 255, 1)",
-		textMain: "rgba(0, 0, 0, 1)",
-		sideMenuBackgroundMain: "rgba(22, 27, 34, 1)",
-		sideMenuBackgroundSecondary: "rgb(55, 60, 68)",
-		sideMenuTextMain: "rgb(218, 218, 218)",
-	},
+    title: "light",
+    colors: {
+        first_color: '#92B4A7',
+        second_color: '#B6CB9E',
+        third_color: '#D1F0B1',
+        fourth_color: '#8C8A93',
+        fifth_color: '#81667A',
+    },
 };

@@ -18,8 +18,8 @@ a {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: ${(props) => props?.theme?.colors?.backgroundMain};
-  color: ${(props) => props?.theme?.colors?.textMain};
+  background-color: ${(props) => props.theme.colors.third_color};
+  color: ${(props) => props.theme.colors.fifth_color};
 }
 
 #root {
