@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./assets/styles/reset.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
@@ -14,26 +14,41 @@ import Repositories from "./pages/repositorios/Repositories";
 import ThemeButton from "./components/ThemeButton";
 
 import UserNameContext from "./contexts/UserNameContext";
+import SideMenu from "./components/SideMenu.js/SideMenu";
+import MobileButton from "./components/SideMenu.js/MobileButton";
 
 function App() {
-	const [userName, setUserName] = useState(null);
-	const [darkTheme, setDarkTheme] = useState(false);
+    const [userName, setUserName] = useState(null);
+    const [darkTheme, setDarkTheme] = useState(false);
 
-	return (
-		<UserNameContext.Provider value={{ userName, setUserName }}>
-			<ThemeProvider theme={darkTheme ? dark : light}>
-				<Router>
-					<GlobalStyle />
-					<Switch>
-						<Route path="/" exact component={Home} />
-						<Route path="/historico" exact component={History} />
-						<Route path="/repositorios" exact component={Repositories} />
-					</Switch>
-					<ThemeButton darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
-				</Router>
-			</ThemeProvider>
-		</UserNameContext.Provider>
-	);
+
+    const [sideMenuClosed, setSideMenuClosed] = useState(true);
+    const [width, setWidth] = useState(window.innerWidth);
+    useEffect(() => {
+        const handleResizeWindow = () => setWidth(window.innerWidth);
+        window.addEventListener("resize", handleResizeWindow);
+        return () => {
+            window.removeEventListener("resize", handleResizeWindow);
+        };
+    }, []);
+
+    return (
+        <UserNameContext.Provider value={{ userName, setUserName }}>
+            <ThemeProvider theme={darkTheme ? dark : light}>
+                <GlobalStyle />
+                <ThemeButton darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
+                {width <= 630 && <MobileButton sideMenuClosed={sideMenuClosed} setSideMenuClosed={setSideMenuClosed} />}
+                <Router>
+                    {(width > 630 || !sideMenuClosed) && <SideMenu width={width} />}
+                    <Switch>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/historico" exact component={History} />
+                        <Route path="/repositorios" exact component={Repositories} />
+                    </Switch>
+                </Router>
+            </ThemeProvider>
+        </UserNameContext.Provider>
+    );
 }
 
 export default App;
