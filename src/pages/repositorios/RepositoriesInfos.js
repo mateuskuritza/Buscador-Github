@@ -14,7 +14,7 @@ export default function RepositoriesInfos({ userName }) {
 	}, [userName]);
 
 	if (!userName) return <h3>Primeiro pesquise por um usuário</h3>;
-	if (loading) return <Loader type="Puff" color="red" height={300} width={300} timeout={3000} />;
+	if (loading) return <Loader type="Puff" color="white" height={300} width={300} timeout={3000} />;
 	if (error) return <h3>Usuário não encontrado!</h3>;
 	if (data?.length === 0) return <h3>Esse usuário não possui nenhum repositório público!</h3>;
 

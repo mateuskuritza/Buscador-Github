@@ -1,10 +1,10 @@
 export default {
     title: "dark",
     colors: {
-        first_color: '#FF0035',
-        second_color: '#38405F',
-        third_color: '#59546C',
-        fourth_color: '#8B939C',
-        fifth_color: '#CF9893',
+        first_color: '#581899',
+        second_color: '#000000',
+        third_color: '#571175',
+        fourth_color: '#ffffff',
+        fifth_color: '#b8edf2',
     },
 };

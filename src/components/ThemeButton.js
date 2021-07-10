@@ -15,4 +15,5 @@ const ThemeButtonContainer = styled.div`
 	right: 30px;
 	background: transparent;
 	font-size: 42px;
+    color: white;
 `;
