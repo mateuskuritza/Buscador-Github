@@ -5,45 +5,45 @@ import { useHistory } from "react-router";
 import UserNameContext from "../../contexts/UserNameContext";
 
 export default function HistoricInfos() {
-	const localSearchs = localStorage.getItem("search");
-	const [searchs, setSearchs] = useState(false);
-	const history = useHistory();
+    const localSearchs = localStorage.getItem("search");
+    const [searchs, setSearchs] = useState(false);
+    const history = useHistory();
 
-	const { setUserName } = useContext(UserNameContext);
+    const { setUserName } = useContext(UserNameContext);
 
-	useEffect(() => {
-		setSearchs(JSON.parse(localSearchs));
-	}, [localSearchs]);
+    useEffect(() => {
+        setSearchs(JSON.parse(localSearchs));
+    }, [localSearchs]);
 
-	function searchThis(thisUserName) {
-		setUserName(thisUserName);
-		history.push("/");
-	}
+    function searchThis(thisUserName) {
+        setUserName(thisUserName);
+        history.push("/");
+    }
 
-	if (!searchs) return <strong>Nenhuma pesquisa realizada até o momento!</strong>;
+    if (!searchs) return <strong>Nenhuma pesquisa realizada até o momento!</strong>;
 
-	return (
-		<HistoricInfosContainer>
-			<table>
-				<thead>
-					<tr>
-						<th>Usuário</th>
-						<th>Horário</th>
-						<th>Data</th>
-					</tr>
-				</thead>
-				<tbody>
-					{searchs.map((s, i) => (
-						<tr key={i} onClick={() => searchThis(s.userName)}>
-							<td>{s.userName.substring(0, 15)}</td>
-							<td>{s.hour}</td>
-							<td>{s.date}</td>
-						</tr>
-					))}
-				</tbody>
-			</table>
-		</HistoricInfosContainer>
-	);
+    return (
+        <HistoricInfosContainer>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usuário</th>
+                        <th>Horário</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {searchs.map((s, i) => (
+                        <tr key={i} onClick={() => searchThis(s.userName)}>
+                            <td>{s.userName.substring(0, 15)}</td>
+                            <td>{s.hour}</td>
+                            <td>{s.date}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </HistoricInfosContainer>
+    );
 }
 
 const HistoricInfosContainer = styled.div`
@@ -71,4 +71,14 @@ const HistoricInfosContainer = styled.div`
 			background-color: rgb(224, 224, 224);
 		}
 	}
+
+    @media (max-width: 360px) {
+        margin: 20px auto;
+        table{
+        font-size: 12px;
+        td{
+            padding: 4px;
+        }
+        }
+    }
 `;

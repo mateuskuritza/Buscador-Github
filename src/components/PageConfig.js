@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 const PageContainer = styled.div`
-	width: 100%;
 	display: flex;
-    height: 100vh;
-
-	@media (max-width: 580px) {
+    width: 100%;
+    
+    @media (max-width: 630px) {
 		flex-direction: column;
 		align-items: center;
 	}
