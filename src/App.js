@@ -8,14 +8,14 @@ import { ThemeProvider } from "styled-components";
 import light from "./assets/styles/themes/light";
 import dark from "./assets/styles/themes/dark";
 
-import History from "./pages/historico/History";
+import History from "./pages/history/History";
 import Home from "./pages/home/Home";
-import Repositories from "./pages/repositorios/Repositories";
+import Repositories from "./pages/repositories/Repositories";
 import ThemeButton from "./components/ThemeButton";
 
 import UserNameContext from "./contexts/UserNameContext";
-import SideMenu from "./components/SideMenu.js/SideMenu";
-import MobileButton from "./components/SideMenu.js/MobileButton";
+import SideMenu from "./components/SideMenu/SideMenu";
+import MobileButton from "./components/MobileButton";
 
 function App() {
     const [userName, setUserName] = useState(null);
@@ -43,7 +43,7 @@ function App() {
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route path="/historico" exact component={History} />
-                        <Route path="/repositorios" exact component={Repositories} />
+                        <Route path="/repositorios/:userName" exact component={Repositories} />
                     </Switch>
                 </Router>
             </ThemeProvider>

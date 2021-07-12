@@ -1,7 +1,8 @@
 import Title from "../../components/Title";
 import DebounceInput from "./inputSearch/DebouceInput";
 import UserInfos from "./UserInfos";
-import { PageContainer, Content } from "../../components/PageConfig";
+import { PageContainer, Content } from "../../assets/styles/PageStyle";
+
 export default function Home() {
 	return (
 		<PageContainer>

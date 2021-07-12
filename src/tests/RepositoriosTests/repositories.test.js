@@ -7,9 +7,9 @@ import { Router } from "react-router-dom";
 
 import UserNameContext from "../../contexts/UserNameContext";
 
-import Repositories from "../../pages/repositorios/Repositories";
-import RepositoriesInfos from "../../pages/repositorios/RepositoriesInfos";
-import Repository from "../../pages/repositorios/Repository";
+import Repositories from "../../pages/repositories/Repositories";
+import RepositoriesInfos from "../../pages/repositories/RepositoriesInfos";
+import Repository from "../../pages/repositories/Repository";
 
 describe("Route /repositorios", () => {
 	test("existing component <Repositories />", () => {
