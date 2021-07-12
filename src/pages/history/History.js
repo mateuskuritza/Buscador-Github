@@ -1,13 +1,13 @@
 import Title from "../../components/Title";
-import HistoricInfos from "./HistoricInfos";
-import { PageContainer, Content } from "../../components/PageConfig";
+import HistoryTable from "./HistoryTable";
+import { PageContainer, Content } from "../../assets/styles/PageStyle";
 
 export default function History() {
 	return (
 		<PageContainer>
 			<Content>
 				<Title content="Histórico de Pesquisas" />
-				<HistoricInfos />
+				<HistoryTable />
 			</Content>
 		</PageContainer>
 	);

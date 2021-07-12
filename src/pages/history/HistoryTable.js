@@ -4,7 +4,7 @@ import { useHistory } from "react-router";
 
 import UserNameContext from "../../contexts/UserNameContext";
 
-export default function HistoricInfos() {
+export default function HistoryTable() {
     const localSearchs = localStorage.getItem("search");
     const [searchs, setSearchs] = useState(false);
     const history = useHistory();

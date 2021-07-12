@@ -33,7 +33,7 @@ export default function MobileButton({ sideMenuClosed, setSideMenuClosed }) {
 }
 
 const ButtonContainer = styled.div`
-	--color: white;
+	--color: ${props => props.sideMenuClosed ? "black" : "white"};
 	--blue: transparent; // background color
 	--animation: 0.6s; // animation speed
 	--scale: 1; // icon scale 68/68 default

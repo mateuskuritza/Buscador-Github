@@ -21,7 +21,7 @@ const TopContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	color: ${(props) => props.theme.colors.fourth_color};
+	color: ${(props) => props?.theme?.colors?.fourth_color};
 	font-size: 10px;
 	padding: 15px 5px 0 5px;
 `;

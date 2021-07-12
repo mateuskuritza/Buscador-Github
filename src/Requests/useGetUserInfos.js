@@ -25,7 +25,7 @@ export default function useGetUserInfos(user) {
 
 	const onError = (error) => {
 		setLoading(false);
-        console.log(error);
+        console.log(error)
 		setError(true);
 	};
 

@@ -12,65 +12,67 @@ import useGetUserInfos from "../../Requests/useGetUserInfos";
 import UserNameContext from "../../contexts/UserNameContext";
 
 export default function UserInfos() {
-	const { userName } = useContext(UserNameContext);
+    const { userName } = useContext(UserNameContext);
 
-	const { loading, error, data, fetchData } = useGetUserInfos(userName);
+    const { loading, error, data, fetchData } = useGetUserInfos(userName);
 
-	useEffect(() => {
-		fetchData();
-	}, [userName]);
+    useEffect(() => {
+        fetchData();
+    }, [userName]);
 
-	function formatDate(date) {
-		return dayjs(date).format("DD/MM/YYYY");
-	}
+    function formatDate(date) {
+        return dayjs(date).format("DD/MM/YYYY");
+    }
 
-	function existingValue(value) {
-		return value || <span>não informado</span>;
-	}
+    function existingValue(value) {
+        return value || <span>não informado</span>;
+    }
+    
+    if(!userName) return <h3>Pesquise por um usuário!</h3>
+    
+    if (loading) {
+        return <Loader type="Puff" color={"white"} height={300} width={300} timeout={3000} />;
+    }
 
-	if (!userName) return <h3>Pesquise por um usuário!</h3>;
+    if (error) return <h3>Erro!</h3>;
 
-	if (loading) {
-		return <Loader type="Puff" color={"white"} height={300} width={300} timeout={3000} />;
-	}
-	if (error) return <h3>Usuário não encontrado ou limite da API atingido, aguarde 1min e tente novamente!</h3>;
 
-	const { name, avatar_url, location, blog, public_repos, created_at, updated_at, company, twitter, bio } = data;
+    const { login, name, avatar_url, location, blog, public_repos, created_at, updated_at, company, twitter, bio } = data;
 
-	return (
-		<UserInfosContainer>
-			<PessoalInfos>
-				<strong>{name}</strong>
-				<div>
-					<img src={avatar_url} alt="User avatar" />
-					{bio ? <p> {bio} </p> : null}
-				</div>
-			</PessoalInfos>
+    return (
+        <UserInfosContainer>
+            <PessoalInfos>
+                <strong>{name}</strong>
+                <div>
+                    <img src={avatar_url} alt="User avatar" />
+                    {bio ? <p> {bio} </p> : null}
+                </div>
+            </PessoalInfos>
 
-			<p>
-				<GpsIcon /> Endereço: {existingValue(location)}
-			</p>
-			<p>
-				<TwitterIcon /> Twitter: {existingValue(twitter)}
-			</p>
-			<p>
-				<BusinessIcon /> Empresa atual: {existingValue(company)}
-			</p>
-			<p>
-				<WebIcon /> Site pessoal: {existingValue(blog)}
-			</p>
+            <p>
+                <GpsIcon /> Endereço: {existingValue(location)}
+            </p>
+            <p>
+                <TwitterIcon /> Twitter: {existingValue(twitter)}
+            </p>
+            <p>
+                <BusinessIcon /> Empresa atual: {existingValue(company)}
+            </p>
+            <p>
+                <WebIcon /> Site pessoal: {existingValue(blog)}
+            </p>
 
-			<GitHubInfos>
-				<p>
-					Conta criada em {formatDate(created_at)} com última alteração no dia {formatDate(updated_at)}.
-				</p>
-				<br></br>
-				<Link to="/repositorios">
-					{name ? name + " possui" : "Possui "} {public_repos} repositórios públicos, clique aqui para conferir.
-				</Link>{" "}
-			</GitHubInfos>
-		</UserInfosContainer>
-	);
+            <GitHubInfos>
+                <p>
+                    Conta criada em {formatDate(created_at)} com última alteração no dia {formatDate(updated_at)}.
+                </p>
+                <br></br>
+                <Link to={`/repositorios/${login}`}>
+                    {name ? name + " possui" : "Possui "} {public_repos} repositórios públicos, clique aqui para conferir.
+                </Link>{" "}
+            </GitHubInfos>
+        </UserInfosContainer>
+    );
 }
 
 const UserInfosContainer = styled.div`

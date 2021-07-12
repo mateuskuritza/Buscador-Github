@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export default function Button({ content, to }) {
-	return (
-		<ButtonContainer>
-			<Link to={to}>{content}</Link>
-		</ButtonContainer>
-	);
+    return (
+        <ButtonContainer>
+            <Link to={to}>{content}</Link>
+        </ButtonContainer>
+    );
 }
 
 const ButtonContainer = styled.button`
@@ -28,6 +28,6 @@ const ButtonContainer = styled.button`
 	}
 	:focus,
 	:hover {
-		background-color: ${(props) => props?.theme?.colors?.sideMenuBackgroundSecondary};
+		background-color: ${(props) => props?.theme?.colors?.first_color};
 	}
 `;
