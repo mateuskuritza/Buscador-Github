@@ -31,7 +31,7 @@ export default function UserInfos() {
     if(!userName) return <h3>Pesquise por um usuário!</h3>
     
     if (loading) {
-        return <Loader type="Puff" color={"white"} height={300} width={300} timeout={3000} />;
+        return <Loader type="Puff" color={"black"} height={300} width={300} timeout={3000} />;
     }
 
     if (error) return <h3>Erro!</h3>;
