@@ -12,6 +12,7 @@ Além disso também foram utilizadas as bibliotecas:
  * <a href="https://styled-components.com/">**styled-components**</a> para a estilização dos componentes;
  * <a href="https://react-icons.github.io/react-icons/">**react-icons**</a> para os ícones;
  * <a href="https://www.npmjs.com/package/react-loader-spinner">**react-loader-spinner**</a> para os carregamentos.
+ * <a href="https://www.npmjs.com/package/react-debounce-input">**react-debounce-input**</a> para a pesquisa de usuários.
 
 ### Instruções de uso:
 > Foi realizado o deploy do sistema na **Vercel** <a href="https://desafio-vivo.vercel.app/"> aqui</a>;
