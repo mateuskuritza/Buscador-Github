@@ -68,7 +68,8 @@ const HistoricInfosContainer = styled.div`
 	tbody > tr {
 		cursor: pointer;
 		:hover {
-			background-color: ${(props) => props?.theme?.colors?.second_color};;
+			background-color: ${(props) => props?.theme?.colors?.second_color};
+            color: white;
 		}
 	}
 
